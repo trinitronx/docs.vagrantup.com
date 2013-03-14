@@ -5,7 +5,7 @@ sidebar_current: "installation-upgrading"
 # Upgrading Vagrant
 
 If you're upgrading from Vagrant 1.0.x, please read the
-[specific page dedicated to that](/v2/installation/upgrading-from-1-0.html").
+[specific page dedicated to that](/v2/installation/upgrading-from-1-0.html).
 This page covers upgrading Vagrant in general during the 1.x series.
 
 Upgrades of Vagrant during the 1.x release series are straightforward:
