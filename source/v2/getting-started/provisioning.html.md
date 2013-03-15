@@ -18,7 +18,7 @@ so that the guest machine can be repeatably created and ready-to-use.
 
 We'll just setup [Apache](http://httpd.apache.org/) for our basic project,
 and we'll do so using a shell script. Create the following shell script
-and save it as `provision.sh` in the same directory as your Vagrantfile:
+and save it as `bootstrap.sh` in the same directory as your Vagrantfile:
 
 ```bash
 #!/usr/bin/env bash
