@@ -72,7 +72,7 @@ create your provider.
 Each provider is responsible for having its own box format. This is
 actually an extremely simple step due to how generic boxes are. Before
 explaining you should get familiar with the general
-[box file format](http://localhost:4567/v2/boxes/format.html).
+[box file format](/v2/boxes/format.html).
 
 The only requirement for your box format is that the `metadata.json`
 file have a `provider` key which matches the name of your provider you
