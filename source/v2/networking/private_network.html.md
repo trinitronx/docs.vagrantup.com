@@ -38,7 +38,7 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-It is up to the uers to make sure that the static IP doesn't collide
+It is up to the users to make sure that the static IP doesn't collide
 with any other machines on the same network.
 
 While you can choose any IP you'd like, you _should_ use an IP from
