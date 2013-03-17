@@ -11,7 +11,7 @@ machine that Vagrant manages.
 
 ## Available Settings
 
-`config.vm.box` - This configures what [box](/v2/boxes/index.html) the
+`config.vm.box` - This configures what [box](/v2/boxes.html) the
 machine will be brought up against. The value here should match one of
 the installed boxes on the system.
 
