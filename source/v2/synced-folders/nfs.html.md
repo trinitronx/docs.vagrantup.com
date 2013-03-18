@@ -6,7 +6,7 @@ sidebar_current: "syncedfolder-nfs"
 
 In some cases the default shared folder implementations (such as VirtualBox
 shared folders) have high performance penalties. If you're seeing less
-than ideal performance with synced folders, [NFS](http://en.wikipedia.org/wiki/Network_File_System_(protocol))
+than ideal performance with synced folders, [NFS](http://en.wikipedia.org/wiki/Network_File_System_%28protocol%29)
 can offer a solution. Vagrant has built-in support to orchestrate the
 configuration of the NFS server on the host and guest for you.
 
