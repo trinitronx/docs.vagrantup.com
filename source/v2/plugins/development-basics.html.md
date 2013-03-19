@@ -34,12 +34,12 @@ about the plugin such as the name of it and what components it contains.
 A definition at the bare minimum looks like the following:
 
 ```ruby
-class MyPlugin < Vagrant.plugin(2)
+class MyPlugin < Vagrant.plugin("2")
   name "My Plugin"
 end
 ```
 
-A definition is a class that inherits from `Vagrant.plugin(2)`. The "2"
+A definition is a class that inherits from `Vagrant.plugin("2")`. The "2"
 there is the version that the plugin is valid for. API stability is only
 promised for each major version of Vagrant, so this is important. (The
 1.x series is working towards 2.0, so the API version is "2")
@@ -57,7 +57,7 @@ Vagrant. An example is shown below where a command and provisioner are
 added:
 
 ```
-class MyPlugin < Vagrant.plugin(2)
+class MyPlugin < Vagrant.plugin("2")
   name "My Plugin"
 
   command "run-my-plugin" do
