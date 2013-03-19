@@ -25,6 +25,8 @@ and save it as `bootstrap.sh` in the same directory as your Vagrantfile:
 
 apt-get update
 apt-get install -y apache2
+rm -rf /var/www
+ln -fs /vagrant /var/www
 ```
 
 Next, we configure Vagrant to run this shell script when setting up
@@ -58,7 +60,7 @@ that the provisioning works by loading a file from SSH within the machine:
 ```
 $ vagrant ssh
 ...
-vagrant@precise32:~$ wget -q0- 127.0.0.1
+vagrant@precise32:~$ wget -qO- 127.0.0.1
 ```
 
 This works because in the shell script above we installed Apache and
