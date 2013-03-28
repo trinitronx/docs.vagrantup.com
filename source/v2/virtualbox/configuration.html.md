@@ -28,7 +28,7 @@ end
 be used to make modifications to VirtualBox virtual machines from the command
 line.
 
-Vagrant exposees a way to call any command against VBoxManage just prior
+Vagrant exposes a way to call any command against VBoxManage just prior
 to booting the machine:
 
 ```ruby

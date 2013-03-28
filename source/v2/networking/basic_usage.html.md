@@ -31,7 +31,7 @@ the guest port can be accessed by.
 
 ## Multiple Networks
 
-Multiple networks can be defined by having muliple `config.vm.network`
+Multiple networks can be defined by having multiple `config.vm.network`
 calls within the Vagrantfile. The exact meaning of this can differ for
 each [provider](/v2/providers/index.html), but in general the order specifies
 the order in which the networks are enabled.
