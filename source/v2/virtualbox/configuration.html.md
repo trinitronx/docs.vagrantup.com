@@ -33,6 +33,7 @@ By setting another name, your VM can be more easily identified.
 config.vm.provider "virtualbox" do |v|
   v.name = "my_vm"
 end
+```
 
 ## VBoxManage Customizations
 
