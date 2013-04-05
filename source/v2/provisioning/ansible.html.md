@@ -112,7 +112,13 @@ end
 The Ansible provisioner also includes a number of additional options that can be set,
 all of which get passed to the `ansible-playbook` command that ships with Ansible.
 
-* `ansible.extra_vars` can be used to pass a strong of additional variables to the playbook.
+* `ansible.extra_vars` can be used to pass a hash of additional variables to the playbook. For example:
+```
+ansible.extra_vars = {
+  ntp_server: "pool.ntp.org",
+  nginx_workers: 4
+}
+```
 These variables take the highest precedence over any other variables.
 * `ansible.sudo` can be set to `true` to cause Ansible to perform commands using sudo.
 * `ansible.sudo_user` can be set to a string containing a username on the guest who should be used
