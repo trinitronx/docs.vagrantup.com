@@ -39,7 +39,7 @@ the `Vagrant.plugin(2, :config)` interface.
 Implementations of configuration keys should subclass `Vagrant.plugin(2, :config)`,
 which is a Vagrant method that will return the proper subclass for a version
 2 configuration section. The implementation is very simple, and acts mostly
-as a plain Ruby object. Here is an exmaple:
+as a plain Ruby object. Here is an example:
 
 ```ruby
 class Config < Vagrant.plugin(2, :config)

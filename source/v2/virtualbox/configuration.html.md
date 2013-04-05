@@ -17,8 +17,21 @@ that may be running in the machine, or debugging a strange boot issue.
 You can easily tell the VirtualBox provider to boot with a GUI:
 
 ```
-config.vm.provider :virtualbox do |v|
+config.vm.provider "virtualbox" do |v|
   v.gui = true
+end
+```
+
+## Virtual Machine Name
+
+You can customize the name that appears in the VirtualBox GUI by
+setting the `name` property. By default, Vagrant sets it to the containing
+folder of the Vagrantfile plus a timestamp of when the machine was created.
+By setting another name, your VM can be more easily identified.
+
+```ruby
+config.vm.provider "virtualbox" do |v|
+  v.name = "my_vm"
 end
 ```
 
@@ -28,11 +41,11 @@ end
 be used to make modifications to VirtualBox virtual machines from the command
 line.
 
-Vagrant exposees a way to call any command against VBoxManage just prior
+Vagrant exposes a way to call any command against VBoxManage just prior
 to booting the machine:
 
 ```ruby
-config.vm.provider :virtualbox do |v|
+config.vm.provider "virtualbox" do |v|
   v.customize ["modifyvm", :id, "--cpuexecutioncap", "50"]
 end
 ```

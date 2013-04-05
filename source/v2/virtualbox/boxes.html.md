@@ -4,7 +4,7 @@ sidebar_current: "virtualbox-boxes"
 
 # Boxes
 
-As with [every provider](/v2/providers/boxes.html), the VirtualBox
+As with [every provider](/v2/providers/basic_usage.html), the VirtualBox
 provider has a custom box format.
 
 This page documents the format so that you can create your own base
