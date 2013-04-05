@@ -22,6 +22,18 @@ config.vm.provider :virtualbox do |v|
 end
 ```
 
+## Virtual Machine Name
+
+You can customize the name that appears in the VirtualBox GUI by
+setting the `name` property. By default, Vagrant sets it to the containing
+folder of the Vagrantfile plus a timestamp of when the machine was created.
+By setting another name, your VM can be more easily identified.
+
+```ruby
+config.vm.provider :virtualbox do |v|
+  v.name = "my_vm"
+end
+
 ## VBoxManage Customizations
 
 [VBoxManage](http://www.virtualbox.org/manual/ch08.html) is a utility that can
