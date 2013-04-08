@@ -21,7 +21,7 @@ For example, if you configure VMware Fusion and send it to an individual
 who doesn't have the VMware Fusion provider, Vagrant will silently ignore
 that part of the configuration.
 
-## Configuration
+## Provider Configuration
 
 Configuring a specific provider looks like this:
 
@@ -52,3 +52,37 @@ Remember, some providers don't require any provider-specific configuration
 and work directly out of the box. Provider-specific configuration is meant
 as a way to expose more options to get the most of the provider of your
 choice. It is not meant as a roadblock to running against a specific provider.
+
+## Overriding Configuration
+
+Providers can also override non-provider specific configuration, such
+as `config.vm.box` and any other Vagrant configuration. This is done by
+specifying a second argument to `config.vm.provider`. This argument is
+just like the normal `config`, so set any settings you want, and they will
+be overriden only for that provider.
+
+Example:
+
+```
+Vagrant.configure("2") do |config|
+  config.vm.box = "precise64"
+
+  config.vm.provider :vmware_fusion do |v, override|
+    override.vm.box = "precise64_fusion"
+  end
+end
+```
+
+In the above case, Vagrant will use the "precise64" box by default, but
+will use "precise64_fusion" if the VMware Fusion provider is used.
+
+<div class="alert alert-info">
+	<p>
+		<strong>The Vagrant Way:</strong> The proper "Vagrant way" is to
+		avoid any provider-specific overrides if possible by making boxes
+		for multiple providers that are as identical as possible, since box
+		names can map to multiple providers. However, this isn't always possible,
+		and in those cases, overrides are available.
+	</p>
+</div>
+
