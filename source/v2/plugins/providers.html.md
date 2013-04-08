@@ -103,6 +103,7 @@ a `vagrant box list` you can see what boxes for what providers are installed.
 You do _not need_ the provider plugin installed to add a box for that
 provider.
 
+<a name="actions"></a>
 ## Actions
 
 Probably the most important concept to understand when building a
@@ -207,3 +208,26 @@ you can access the config via `machine.provider_config`.
 		have it just work.
 	</p>
 </div>
+
+## Parallelization
+
+Vagrant supports parallelizing some actions, such as `vagrant up`, if the
+provider explicitly supports it. By default, Vagrant will not parallelize a
+provider.
+
+When parallelization is enabled, multiple [actions](#actions) may be run
+in parallel. Therefore, providers must be certain that their action stacks
+are thread-safe. The core of Vagrant itself (such as box collections, SSH,
+etc.) is thread-safe.
+
+Providers can explicitly enable parallelization by setting the `parallel`
+option on the provider component:
+
+```ruby
+provider("my_cloud", parallel: true) do
+  require_relative "provider"
+  Provider
+end
+```
+
+That is the only change that is needed to enable parallelization.
