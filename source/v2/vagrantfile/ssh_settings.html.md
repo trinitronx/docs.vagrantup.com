@@ -36,6 +36,12 @@ to use port 4567 to talk to the guest if there is no other option.
 
 <hr>
 
+`config.ssh.keep_alive` - If true, a "keep-alive" packet will be sent
+every 5 seconds on the SSH connection. This avoids the connection
+closing on long-running tasks. This defaults to true.
+
+<hr>
+
 `config.ssh.max_tries` - Maximum attempts to SSH while waiting for the
 machine to boot. Default is 100.
 
