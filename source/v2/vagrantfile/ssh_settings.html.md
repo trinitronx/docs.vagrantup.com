@@ -12,19 +12,55 @@ defaults are typically fine, but you can fine tune whatever you'd like.
 
 ## Available Settings
 
-`config.ssh.username` - This sets the username that Vagrant will SSH
-as by default. Providers are free to override this if they detect a more
-appropriate user. By default this is "vagrant," since that is what most
-public boxes are made as.
+`config.ssh.default.host` - This sets the default host that Vagrant will
+use for SSH. This is not set by default because the providers usually
+detect the proper host. Provider-detected hosts will override this. To
+force a certain host, use `config.ssh.host`.
 
 <hr>
 
-`config.ssh.host` - The hostname or IP to SSH into. By default this is
-empty, because the provider usually figures this out for you.
+`config.ssh.default.port` - This sets the default port that Vagrant will
+use to connect to the machine via SSH. This is not set by default because
+the providers usually detect the proper port. Provider-detected ports will
+override this. To force a certain port, use `config.ssh.port`.
 
 <hr>
 
-`config.ssh.port` - The port to SSH into. By default this is port 22.
+`config.ssh.default.private_key_path` - This sets the default private
+key to use for authenticating with SSH. By default this is set to the
+insecure private key that ships with Vagrant, since that is what most
+public boxes use. A provider-detected private key will override this setting.
+To force a certain private key, use `config.ssh.private_key_path`. The
+private key format should be an OpenSSH private key format (as opposed
+to PuTTY keys and such).
+
+<hr>
+
+`config.ssh.default.username` - This sets the default username that
+Vagrant will SSH as, if no other username can be detected. This is set
+to "vagrant" by default, since that is what most public boxes use.
+Alternate providers may detect alternate usernames though, in which
+case this will be overriden. To force a certain username, use `config.ssh.username`.
+
+<hr>
+
+`config.ssh.host` - The same as `config.ssh.default.host`, except this
+will override any detected host and will always be used.
+
+<hr>
+
+`config.ssh.port` - The same as `config.ssh.default.port`, except this
+will override any detected port and will always be used.
+
+<hr>
+
+`config.ssh.private_key_path` - The same as `config.ssh.default.private_key_path`,
+except this will override any detected private key and will always be used.
+
+<hr>
+
+`config.ssh.username` - The same as `config.ssh.default.username`, except
+this will override any detected username and will always be used.
 
 <hr>
 
@@ -49,14 +85,6 @@ machine to boot. Default is 100.
 
 `config.ssh.timeout` - Maximum time to wait while attempting to make
 a single connection via SSH before timing out. Default is 30 seconds.
-
-<hr>
-
-`config.ssh.private_key_path` - The path to the private key to use to
-SSH into the guest machine. By default this is the insecure private key
-that ships with Vagrant, since that is what public boxes use. If you make
-your own custom box with a custom SSH key, this should point to that
-private key.
 
 <hr>
 
