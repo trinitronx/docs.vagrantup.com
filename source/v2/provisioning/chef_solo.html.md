@@ -29,7 +29,7 @@ of a single page of documentation.
 ## Specifying a Run List
 
 The easiest way to get started with the Chef Solo provisioner is to just
-specify a run list. This looks like:
+specify a [run list](http://docs.opscode.com/essentials_cookbook_recipes_run_lists.html). This looks like:
 
 ```ruby
 Vagrant.configure("2") do |config|
