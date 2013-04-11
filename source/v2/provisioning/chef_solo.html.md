@@ -106,7 +106,7 @@ a path to your data bags directory:
 ```ruby
 Vagrant.configure("2") do |config|
   config.vm.provision :chef_solo do |chef|
-    chef.data_bags_path = "roles"
+    chef.data_bags_path = "data_bags"
   end
 end
 ```
