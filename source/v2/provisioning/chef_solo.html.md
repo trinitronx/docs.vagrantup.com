@@ -8,7 +8,7 @@ sidebar_current: "provisioning-chefsolo"
 
 The chef solo provisioner allows you to provision the guest using
 [Chef](http://www.opscode.com/chef/), specifically with
-[Chef Solo](http://wiki.opscode.com/display/chef/Chef+Solo).
+[Chef Solo](http://docs.opscode.com/chef_solo.html).
 
 Chef solo is ideal for people who are already experienced with Chef,
 already have Chef cookbooks, or are looking to learn Chef. Specifically,
@@ -81,7 +81,7 @@ end
 
 ## Roles
 
-Vagrant also supports provisioning with [Chef roles](http://wiki.opscode.com/display/chef/Roles).
+Vagrant also supports provisioning with [Chef roles](http://docs.opscode.com/essentials_roles.html).
 This is done by specifying a path to a roles folder where roles are defined
 and by adding roles to your run list:
 
@@ -99,7 +99,7 @@ root if a relative path is given.
 
 ## Data Bags
 
-[Data bags](http://wiki.opscode.com/display/chef/Data+Bags) are also
+[Data bags](http://docs.opscode.com/essentials_data_bags.html) are also
 supported by the Chef Solo provisioner. This is done by specifying
 a path to your data bags directory:
 
