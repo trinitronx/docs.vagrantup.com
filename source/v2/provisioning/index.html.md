@@ -20,7 +20,7 @@ simple shell scripts to more complex, industry-standard configuration
 management systems.
 
 If you've never used a configuration management system before, it is
-recommended you start with basic [shell scripts](#)
+recommended you start with basic [shell scripts](/v2/provisioning/shell.html)
 for provisioning.
 
 You can find the full list of built-in provisioners and usage of these
