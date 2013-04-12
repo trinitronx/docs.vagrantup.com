@@ -5,7 +5,7 @@ sidebar_current: "plugins-guestcapabilities"
 # Plugin Development: Guest Capabilities
 
 This page documents how to add new capabilities for [guests](/v2/plugins/guests.html)
-to Vagrant, allowing Vagrant to perform new actions on sepcific guest
+to Vagrant, allowing Vagrant to perform new actions on specific guest
 operating systems.
 Prior to reading this, you should be familiar
 with the [plugin development basics](/v2/plugins/development-basics.html).
