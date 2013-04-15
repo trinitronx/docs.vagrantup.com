@@ -12,5 +12,4 @@ using `vagrant ssh`).
 
 ## Options
 
-* `-h NAME` or `--host NAME` - Name of the host for the outputted
-  configuration.
+* `--host NAME` - Name of the host for the outputted configuration.
