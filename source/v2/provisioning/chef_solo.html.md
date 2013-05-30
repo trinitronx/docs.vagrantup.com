@@ -111,6 +111,23 @@ Vagrant.configure("2") do |config|
 end
 ```
 
+## Encrypted Data Bags
+
+[Encrypted data bags](http://docs.opscode.com/essentials_data_bags_encrypt.html) are 
+now supported by Vagrant as of [this pull request](https://github.com/mitchellh/vagrant/pull/398).
+Vagrant will copy the encrypted data bag shared secret key file inside the VM and
+will configure the chef provisioner to use it.
+To specify the path to your local shared secret file:
+
+```ruby
+Vagrant.configure("2") do |config|
+  config.vm.provision :chef_solo do |chef|
+    chef.data_bags_path = "data_bags"
+    chef.encrypted_data_bag_secret_key_path = "#{ENV['HOME']}/.chef/encrypted_data_bag_secret"
+  end
+end
+````
+
 ## Custom JSON Data
 
 Additional configuration data for Chef attributes can be passed in
@@ -134,3 +151,20 @@ end
 
 Hashes, arrays, etc. can be used with the JSON configuration object. Basically,
 anything that can be turned cleanly into JSON works.
+
+## Log Level & Debugging
+
+Vagrant now supports setting the output log level of the chef Provisioner
+since the resolution of [this issue](https://github.com/mitchellh/vagrant/issues/28).
+To set the log level in your Vagrantfile:
+
+```ruby
+Vagrant.configure("2") do |config|
+  config.vm.provision :chef_solo do |chef|
+    # Set chef provisioner log level to one of:
+    # [ :debug, :info, :warn, :error, :fatal ]
+    # (default: :info)
+    chef.log_level = :debug
+  end
+end
+```
